@@ -10,13 +10,9 @@ const mainRouter = require('./app/routes');
 
 app.use(express.json()); // supaya express bisa response json
 app.use(express.urlencoded({ extended: false })); // supaya express bisa menerima body
-
+app.use(cors());
 // http router
 app.use("/", mainRouter);
-
-app.use(cors({
-    origin: '*'
-}));
 
 const port = 3333
 app.listen(port, function(){

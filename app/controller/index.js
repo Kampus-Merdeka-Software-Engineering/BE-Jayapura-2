@@ -3,9 +3,7 @@ const product = require('../model/product')
 function listProduct(req, res, next) {
     product.findAll()
     .then(function(data){
-        res.json({
-            data
-        })
+        res.json(data)
     })
     .catch(function (err) {
         res.json({
