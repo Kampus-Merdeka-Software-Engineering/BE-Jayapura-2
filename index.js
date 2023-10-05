@@ -1,7 +1,7 @@
 const express = require("express") // ini perlu
 const cors = require('cors')
 const path = require('path'); //tidak perlu npm install
-const connection = require('./app/model/index')
+const connection = require('./db')
 
 
 // init express server and router

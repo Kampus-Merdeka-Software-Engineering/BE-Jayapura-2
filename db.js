@@ -9,6 +9,4 @@ const conn = new sequelize.Sequelize("mysql://avnadmin:AVNS_6la3iy4isnJcUZ7K_K_@
     logging: false
 });
 
-module.exports = {
-    conn,
-}
+module.exports = conn;
