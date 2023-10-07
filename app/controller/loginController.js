@@ -9,14 +9,13 @@ function login(req, res, next) {
     Login.findOne({ where: { username } })
         .then((user) => {
             if (!user) {
-                return res.status(404).json({ message: 'User not found' });
+                return res.status(404).json({ message: 'Username salah' });
             }
-
             // Verifikasi password
             if (user.password === password) {
-                return res.json({ message: 'Login successful' });
+                return res.json({ message: 'Login berhasil' });
             } else {
-                return res.status(401).json({ message: 'Incorrect password' });
+                return res.status(401).json({ message: 'Password salah' });
             }
         })
         .catch((error) => {
@@ -24,8 +23,6 @@ function login(req, res, next) {
             return res.status(500).json({ error: 'Internal Server Error' });
         });
 }
-
-
 
 function signup(req, res, next) {
     const { username, email, password } = req.body;
@@ -38,13 +35,11 @@ function signup(req, res, next) {
                 { email: email }
             ]
         }
-
     })
         .then((existingUser) => {
             if (existingUser) {
                 return res.status(409).json({ message: 'Username or email already exists' });
             }
-
             // Jika pengguna belum ada (tidak ada konflik), buat pengguna baru
             Login.create({ username, email, password })
                 .then(() => {
