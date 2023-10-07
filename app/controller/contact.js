@@ -1,19 +1,11 @@
-const product = require('../model/product')
+const contact = require('../model/contact)
 const express = require('express');
 const router = express.Router();
 
 
-function listProduct(req, res, next) {
-    product.findAll()
-        .then(function (data) {
-            res.json(data)
-        })
-        .catch(function (err) {
-            res.json({
-                error: err
-            })
-        })
-}
+
+    
+// Post Contact Form Data
 async function contact(req, res){
     try {
         const contact = await Contact.create(req.body);
@@ -24,6 +16,5 @@ async function contact(req, res){
 }
 
 module.exports = {
-    listProduct, 
     contact
 }
