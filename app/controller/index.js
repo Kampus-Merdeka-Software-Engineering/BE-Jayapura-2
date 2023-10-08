@@ -6,7 +6,7 @@ const router = express.Router();
 function listProduct(req, res, next) {
     product.findAll()
         .then(function (data) {
-            res.json(mapToPruductResponses(data))
+            res.json(data);
         })
         .catch(function (err) {
             res.json({
@@ -15,20 +15,8 @@ function listProduct(req, res, next) {
         })
 }
 
-function mapToPruductResponses(data){
-    const result = [];
-    data.array.forEach(element => {
-        result.push({
-            id: element.id,
-            name: element.nama,
-            image: element.image,
-            price: element.harga,
-            listImage: JSON.parse(element.image_list),
-            ukuran: JSON.parse(element.ukuran)
-        })
-    });
-    return result;
-}
+
+
 async function contact(req, res){
     try {
         const contact = await Contact.create(req.body);
