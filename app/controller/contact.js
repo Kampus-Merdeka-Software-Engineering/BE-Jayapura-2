@@ -1,4 +1,4 @@
-const contact = require('../model/contact)
+const contact = require('../model/contact')
 const express = require('express');
 const router = express.Router();
 
