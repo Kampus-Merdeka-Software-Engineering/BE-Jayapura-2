@@ -26,6 +26,5 @@ function listProduct(req, res, next) {
 }
 
 module.exports = {
-    listProduct
-    
+    listProduct   
 }
