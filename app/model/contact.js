@@ -2,7 +2,7 @@ const connection = require('./index')
 const sequelize = require('sequelize')
 
 const contact = connection.define('contact', {
-    id: {type: sequelize.DataTypes.INTEGER, primaryKey: true},
+    id: {type: sequelize.DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     nama_awal: {type: sequelize.DataTypes.STRING},
     nama_akhir: {type: sequelize.DataTypes.STRING},
     email: {type: sequelize.DataTypes.STRING},
