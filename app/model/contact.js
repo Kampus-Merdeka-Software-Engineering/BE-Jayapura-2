@@ -1,13 +1,13 @@
 const connection = require('./index')
 const sequelize = require('sequelize')
 
-const contact = connection.define("contact", {
+const contact = connection.define('contact', {
     id: {type: sequelize.DataTypes.INTEGER, primaryKey: true},
-    nama awal: {type: sequelize.DataTypes.CHAR},
-    nama akhir: {type: sequelize.DataTypes.CHAR},
-    email: {type: sequelize.DataTypes.CHAR},
-    nomor telepon: {type: sequelize.DataTypes.CHAR},
-    pesan: {type: sequelize.DataTypes.CHAR},
+    nama_awal: {type: sequelize.DataTypes.STRING},
+    nama_akhir: {type: sequelize.DataTypes.STRING},
+    email: {type: sequelize.DataTypes.STRING},
+    nomor_telepon: {type: sequelize.DataTypes.STRING},
+    pesan: {type: sequelize.DataTypes.TEXT},
 }, {
     freezeTableName: true,
     timestamps: false

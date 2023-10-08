@@ -1,12 +1,8 @@
-const contact = require('../model/contact')
+const Contact = require('../model/contact');
 const express = require('express');
 const router = express.Router();
 
-
-
-    
-// Post Contact Form Data
-async function contact(req, res){
+async function contactus(req, res){
     try {
         const contact = await Contact.create(req.body);
         res.json({ success: true, contact });
@@ -16,5 +12,5 @@ async function contact(req, res){
 }
 
 module.exports = {
-    contact
+    contactus
 }
