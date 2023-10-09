@@ -3,6 +3,10 @@ const cors = require('cors');
 const helmet = require('helmet');
 const connection = require('./db');
 const mainRouter = require('./app/routes');
+const port = process.env.PORT || 3333;
+
+
+
 
 const app = express();
 
@@ -13,8 +17,7 @@ app.use(helmet());
 
 app.use("/", mainRouter);
 
-const port = 3333;
-app.listen(port, function () {
+app.listen(port, "0.0.0.0", function () {
     console.log("Server started on", port);
     connection.authenticate()
         .then(function () {
