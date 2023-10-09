@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-const helmet = require('helmet'); // Tambahkan helmet
+const helmet = require('helmet');
 const connection = require('./db');
 const mainRouter = require('./app/routes');
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(helmet()); // Gunakan middleware helmet
+app.use(helmet());
 
 app.use("/", mainRouter);
 
@@ -22,6 +22,6 @@ app.listen(port, function () {
         })
         .catch(function (err) {
             console.error("Error saat koneksi ke database", err);
-            process.exit(1); // Perbaiki penanganan kesalahan
+            process.exit(1);
         });
 });
